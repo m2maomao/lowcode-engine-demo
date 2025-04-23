@@ -1,0 +1,20 @@
+{
+  "name": "lowcode-engine-standalone-renderer",
+  "version": "1.0.0",
+  "description": "Standalone renderer for Lowcode Engine schemas",
+  "main": "dist/standalone-renderer.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "mkdir -p dist && cp ../dist/js/standalone-renderer.js dist/ && cp ../dist/js/vue-renderer.js dist/ && cp ../dist/js/vue.runtime.global.js dist/"
+  },
+  "keywords": [
+    "lowcode",
+    "renderer",
+    "vue"
+  ],
+  "author": "",
+  "license": "MIT"
+}

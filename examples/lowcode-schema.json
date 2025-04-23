@@ -1,0 +1,407 @@
+{
+  "schema": {
+    "version": "1.0.0",
+    "componentsMap": [
+      {
+        "package": "naive-ui",
+        "version": "2.30.6",
+        "exportName": "NInput",
+        "destructuring": true,
+        "componentName": "NInput"
+      },
+      {
+        "package": "naive-ui",
+        "version": "2.30.6",
+        "exportName": "NFormItem",
+        "destructuring": true,
+        "componentName": "NFormItem"
+      },
+      {
+        "package": "naive-ui",
+        "version": "2.30.6",
+        "exportName": "NButton",
+        "destructuring": true,
+        "componentName": "NButton"
+      },
+      {
+        "package": "naive-ui",
+        "version": "2.30.6",
+        "exportName": "NSpace",
+        "destructuring": true,
+        "componentName": "NSpace"
+      },
+      {
+        "package": "naive-ui",
+        "version": "2.30.6",
+        "exportName": "NForm",
+        "destructuring": true,
+        "componentName": "NForm"
+      },
+      {
+        "package": "naive-ui",
+        "version": "2.30.6",
+        "exportName": "NText",
+        "destructuring": true,
+        "componentName": "NText"
+      },
+      {
+        "package": "naive-ui",
+        "version": "2.30.6",
+        "exportName": "NCard",
+        "destructuring": true,
+        "componentName": "NCard"
+      },
+      {
+        "devMode": "lowCode",
+        "componentName": "Page"
+      }
+    ],
+    "componentsTree": [
+      {
+        "componentName": "Page",
+        "id": "node_dockcviv8fo1",
+        "docId": "docm9u19tho",
+        "props": {},
+        "fileName": "/",
+        "state": {
+          "text": {
+            "type": "JSExpression",
+            "value": "\"outer\""
+          },
+          "isShowDialog": {
+            "type": "JSExpression",
+            "value": "false"
+          },
+          "info": {
+            "type": "JSExpression",
+            "value": "{\n  \"info\": \"\",\n  \"user\": {\n    \"username\": \"\",\n    \"password\": \"\"\n  }\n}"
+          }
+        },
+        "dataSource": {
+          "list": [
+            {
+              "type": "fetch",
+              "isInit": true,
+              "options": {
+                "params": {},
+                "method": "GET",
+                "isCors": true,
+                "timeout": 5000,
+                "headers": {},
+                "uri": "mock/info.json"
+              },
+              "id": "info"
+            },
+            {
+              "type": "fetch",
+              "isInit": false,
+              "options": {
+                "params": {
+                  "username": {
+                    "type": "JSExpression",
+                    "value": "this.info.user.username"
+                  },
+                  "password": {
+                    "type": "JSExpression",
+                    "value": "this.info.user.password"
+                  }
+                },
+                "method": "POST",
+                "isCors": true,
+                "timeout": 5000,
+                "headers": {
+                  "Auth": {
+                    "type": "JSExpression",
+                    "value": "this.text"
+                  },
+                  "Content-Type": "application/json"
+                },
+                "uri": "/api/user/login"
+              },
+              "id": "submit"
+            }
+          ]
+        },
+        "css": "body {\n  font-size: 12px;\n}\n\n.button {\n  width: 100px;\n  color: #ff00ff\n}",
+        "lifeCycles": {
+          "mounted": {
+            "type": "JSFunction",
+            "value": "function mounted() {\n  console.log('did mount');\n}"
+          },
+          "beforeMount": {
+            "type": "JSFunction",
+            "value": "function beforeMount() {\n  console.log('will unmount');\n}"
+          }
+        },
+        "methods": {
+          "testFunc": {
+            "type": "JSFunction",
+            "value": "function testFunc() {\n  console.log('test func');\n}"
+          }
+        },
+        "originCode": "class LowcodeComponent extends Component {\n  state = {\n    \"text\": \"outer\",\n    \"isShowDialog\": false,\n    \"info\": {\n      \"info\": \"\",\n      \"user\": {\n        \"username\": \"\",\n        \"password\": \"\"\n      }\n    }\n  }\n  componentDidMount() {\n    console.log('did mount');\n  }\n  componentWillUnmount() {\n    console.log('will unmount');\n  }\n  testFunc() {\n    console.log('test func');\n  }\n  onClick() {\n    this.setState({\n      isShowDialog: true\n    })\n  }\n  closeDialog() {\n    this.setState({\n      isShowDialog: false\n    })\n  }\n\n\tonClick_new(){\n    this.$message.success('hhhhhh')\n\t}\n\n\tonSubmit(ev){\n    ev.preventDefault();\n    this.dataSourceMap.submit.load()\n\t}\n}",
+        "hidden": false,
+        "title": "",
+        "isLocked": false,
+        "condition": true,
+        "conditionGroup": "",
+        "children": [
+          {
+            "componentName": "NCard",
+            "id": "node_ocl4goj8tm1",
+            "docId": "docm9u19tho",
+            "props": {
+              "segmented": {
+                "content": false,
+                "footer": false,
+                "action": false
+              },
+              "header": {
+                "type": "JSSlot",
+                "value": {
+                  "componentName": "Slot",
+                  "id": "node_ocm9u0vpg61",
+                  "docId": "docm9u19tho",
+                  "props": {},
+                  "title": "头部",
+                  "children": [
+                    {
+                      "componentName": "NText",
+                      "id": "node_ocl4goj8tm3",
+                      "docId": "docm9u19tho",
+                      "props": {
+                        "children": "用户登录",
+                        "type": "default",
+                        "tag": "span"
+                      },
+                      "hidden": false,
+                      "title": "",
+                      "isLocked": false,
+                      "condition": true,
+                      "conditionGroup": ""
+                    }
+                  ]
+                },
+                "id": "node_ocm9u0vpg61"
+              }
+            },
+            "hidden": false,
+            "title": "",
+            "isLocked": false,
+            "condition": true,
+            "conditionGroup": "",
+            "children": [
+              {
+                "componentName": "NForm",
+                "id": "node_ocl4gmvfwx1",
+                "docId": "docm9u19tho",
+                "props": {
+                  "label-width": 80,
+                  "label-align": "left",
+                  "label-placement": "left",
+                  "require-mark-placement": "right",
+                  "__events": {
+                    "eventDataList": [
+                      {
+                        "type": "componentEvent",
+                        "name": "onSubmit",
+                        "relatedEventName": "onSubmit"
+                      }
+                    ],
+                    "eventList": [
+                      {
+                        "name": "onSubmit",
+                        "disabled": true
+                      }
+                    ]
+                  },
+                  "onSubmit": {
+                    "type": "JSFunction",
+                    "value": "function(){this.onSubmit.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
+                  },
+                  "model": {
+                    "type": "JSExpression",
+                    "value": "this.info.user",
+                    "mock": {
+                      "type": "JSExpression",
+                      "value": "this.info.user"
+                    }
+                  }
+                },
+                "hidden": false,
+                "title": "",
+                "isLocked": false,
+                "condition": true,
+                "conditionGroup": "",
+                "children": [
+                  {
+                    "componentName": "NFormItem",
+                    "id": "node_ocl4i3antp2",
+                    "docId": "docm9u19tho",
+                    "props": {
+                      "label": "用户名",
+                      "path": "username",
+                      "size": "medium",
+                      "show-label": true,
+                      "label-align": "left",
+                      "label-placement": "left",
+                      "require-mark-placement": "right",
+                      "rule": {
+                        "type": "string",
+                        "required": true,
+                        "trigger": [
+                          "input",
+                          "blur"
+                        ],
+                        "message": "请输入用户名"
+                      },
+                      "label-width": "auto"
+                    },
+                    "hidden": false,
+                    "title": "",
+                    "isLocked": false,
+                    "condition": true,
+                    "conditionGroup": "",
+                    "children": [
+                      {
+                        "componentName": "NInput",
+                        "id": "node_ocl4i3antp3",
+                        "docId": "docm9u19tho",
+                        "props": {
+                          "placeholder": "请输入用户名",
+                          "v-model:value": {
+                            "type": "JSExpression",
+                            "value": "this.info.user.username"
+                          },
+                          "show-password-on": "click"
+                        },
+                        "hidden": false,
+                        "title": "",
+                        "isLocked": false,
+                        "condition": true,
+                        "conditionGroup": ""
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "NFormItem",
+                    "id": "node_ocl4i3antp4",
+                    "docId": "docm9u19tho",
+                    "props": {
+                      "label": "密码",
+                      "path": "password",
+                      "size": "medium",
+                      "show-label": true,
+                      "label-align": "left",
+                      "label-placement": "left",
+                      "require-mark-placement": "right",
+                      "rule": {
+                        "type": "string",
+                        "required": true,
+                        "trigger": [
+                          "input",
+                          "blur"
+                        ],
+                        "message": "请输入密码"
+                      }
+                    },
+                    "hidden": false,
+                    "title": "",
+                    "isLocked": false,
+                    "condition": true,
+                    "conditionGroup": "",
+                    "children": [
+                      {
+                        "componentName": "NInput",
+                        "id": "node_ocl4i3antp5",
+                        "docId": "docm9u19tho",
+                        "props": {
+                          "placeholder": "请输入密码",
+                          "v-model:value": {
+                            "type": "JSExpression",
+                            "value": "this.info.user.password"
+                          },
+                          "type": "password",
+                          "show-password-on": "click"
+                        },
+                        "hidden": false,
+                        "title": "",
+                        "isLocked": false,
+                        "condition": true,
+                        "conditionGroup": ""
+                      }
+                    ]
+                  },
+                  {
+                    "componentName": "NSpace",
+                    "id": "node_ocl4goj8tm4",
+                    "docId": "docm9u19tho",
+                    "props": {
+                      "align": "start",
+                      "justify": "center",
+                      "size": "medium"
+                    },
+                    "hidden": false,
+                    "title": "",
+                    "isLocked": false,
+                    "condition": true,
+                    "conditionGroup": "",
+                    "children": [
+                      {
+                        "componentName": "NButton",
+                        "id": "node_ocl4goj8tm6",
+                        "docId": "docm9u19tho",
+                        "props": {
+                          "children": "登录",
+                          "icon-placement": "left",
+                          "attr-type": "submit",
+                          "type": "primary",
+                          "size": "medium",
+                          "bordered": true
+                        },
+                        "hidden": false,
+                        "title": "",
+                        "isLocked": false,
+                        "condition": true,
+                        "conditionGroup": ""
+                      },
+                      {
+                        "componentName": "NButton",
+                        "id": "node_ocl4goj8tm5",
+                        "docId": "docm9u19tho",
+                        "props": {
+                          "children": "重置",
+                          "icon-placement": "left",
+                          "attr-type": "button",
+                          "type": "default",
+                          "size": "medium",
+                          "bordered": true
+                        },
+                        "hidden": false,
+                        "title": "",
+                        "isLocked": false,
+                        "condition": true,
+                        "conditionGroup": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "i18n": {}
+  },
+  "packages": [
+    {
+      "package": "naive-ui",
+      "version": "2.32.0",
+      "urls": [
+        "https://unpkg.com/naive-ui@2.32.0/dist/index.prod.js"
+      ],
+      "library": "naive"
+    }
+  ]
+}

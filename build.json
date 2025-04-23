@@ -1,6 +1,7 @@
 {
   "entry": {
-    "preview": "./src/vue/preview.ts"
+    "preview": "./src/vue/preview.ts",
+    "standalone-renderer": "./src/vue/standalone-renderer-wrapper.ts"
   },
   "publicPath": "/",
   "externals": {
